@@ -2,10 +2,20 @@ import './App.css';
 import {Routes,Route} from "react-router-dom";
 import Main from './pages/Main/Main.jsx';
 import PlusPage from './pages/Plus/PlusPage.jsx';
+import Donot from './pages/Main/Donot.jsx';
 
 import DocsPage from './pages/docs/DocsPage/DocsPage.jsx';
 
+
+
 function App() {
+
+  const userwidth = window.innerWidth;
+
+  if(userwidth <= 970){
+    return <Donot></Donot>
+  }
+  
   return (
     <Routes>
       <Route path = '/' element = {<Main></Main>}></Route>
