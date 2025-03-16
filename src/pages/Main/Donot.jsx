@@ -21,6 +21,6 @@ const Container = styled.div`
 
 const Alert = styled.div`
     color:white;
-    font-size:4rem;
+    font-size:2rem;
     text-align:center;
 `
