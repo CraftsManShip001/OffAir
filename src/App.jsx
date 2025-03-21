@@ -12,7 +12,7 @@ function App() {
 
   const userwidth = window.innerWidth;
 
-  if(userwidth <= 970){
+  if(userwidth <= 600){
     return <Donot></Donot>
   }
   
