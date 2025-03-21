@@ -24,6 +24,7 @@ const Container = styled.div`
     background-color:#222222;
     width:100vw;
     height:200vh;
+    margin-top:10rem;
 `
 
 const Docs = styled.div`

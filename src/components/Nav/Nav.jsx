@@ -23,10 +23,15 @@ export default function Nav() {
 
 const NavMenu = styled.nav`
     display: flex;
+    position : fixed;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    width:100%;
+    height: 6.5rem;
     padding: 0 2%;
+    top:0;
+    z-index: 1000;
+
 `;
 
 const LogoContainer = styled.div`
@@ -37,7 +42,7 @@ const LogoContainer = styled.div`
 const MenuContainer = styled.div`
     display: flex;
     align-items: center;
-    margin-right:60px;
+    margin-right:5rem;
 `;
 
 const Menu = styled.a`

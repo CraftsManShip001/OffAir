@@ -5,8 +5,6 @@ import styled from "styled-components";
 export default function SubBar({subtitle,isSelected,onclick}){
 
     const [bar,changeBar] = useBar();
-
-
     return(
         <>
         <Sub bar = {bar} onClick={()=>{changeBar(); onclick()}} isSelected={isSelected}>{subtitle}</Sub>
@@ -15,7 +13,7 @@ export default function SubBar({subtitle,isSelected,onclick}){
 }
 
 const Sub = styled.div`
-    width : 90%;
+    width : 100%;
     height : 1.75rem;
     background-color : ${(props) => (props.isSelected ? "#232031" : null)};;
     color : white;

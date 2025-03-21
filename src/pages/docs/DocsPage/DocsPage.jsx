@@ -1,5 +1,4 @@
 import '../../../App.css';
-import styled from "styled-components";
 import NavMenu from '../../../components/Nav/Nav.jsx';
 import { MDXProvider } from "@mdx-js/react";
 import MainBar from '../../../components/SideBar/MainBar/MainBar.jsx';
@@ -8,9 +7,9 @@ import * as S from '../styles/style.jsx';
 
 export default function DocsPage(){
 
-    const [CurrentDocs, setCurrentDocs] = useState(null);
+    const [CurrentDocs, setCurrentDocs] = useState('소개');
 
-    const [selectedSub, setSelectedSub] = useState(null); // 선택된 SubBar 상태 추적
+    const [selectedSub, setSelectedSub] = useState('소개'); // 선택된 메뉴 추적함
 
     const loadGuide = (folder,docsName) => {
         import(`../../../components/docsMDX/${folder}/${docsName}.mdx`)
@@ -58,7 +57,22 @@ export default function DocsPage(){
     const GearMenu = [
         {subName:'기능 설명'},
         {subName:'입출력 신호 연결'},
-        {subName:'프로그램 실행'}
+        {subName:'프로그램 실행'},
+        {subName:'원격'},
+        {subName:'단문 메시지 송출'},
+        {subName:'동영상 녹화'},
+        {subName:'배경 오디오 설정'},
+        {subName:'예약 송출'},
+        {subName:'외부장비 제어'},
+        {subName:'이미지,PPT 송출'},
+        {subName:'입력 출력 설정'},
+        {subName:'입출력 바이패스 설정'},
+        {subName:'AUDIO MIXER'},
+        {subName:'LIVE 입력 영상 송출'},
+        {subName:'NET & USB'},
+        {subName:'PC 화면 송출'},
+        {subName:'Play List 순서 송출'},
+        {subName:'VIDEO MIXER'}
     ]
       
     

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useBar } from "../../../hooks/Bar/useBar";
-import { useState } from "react";
 import Closed from '../../../assets/closed.png';
 import Opened from '../../../assets/opened.png';
 
@@ -30,8 +29,8 @@ export default function MainBar({title,subMenus,selectedSub,setSelectedSub}){
 }
 
 const Bar = styled.div`
-    width : 100%;
-    height : 2.5%;
+    width : 95%;
+    height : 2.2rem;
     background-color : #232031;
     color : white;
     display: flex;
@@ -39,7 +38,7 @@ const Bar = styled.div`
     justify-content: space-between;
     padding-left:8%;
     border-radius:7px;
-    margin-top:3%;
+    margin-top:10%;
     font-size:0.85rem;
 `
 
