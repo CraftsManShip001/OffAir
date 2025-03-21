@@ -23,7 +23,7 @@ export default function PlusPage(){
 const Container = styled.div`
     background-color:#222222;
     width:100vw;
-    height:200vh;
+    height:auto;
     margin-top:10rem;
 `
 

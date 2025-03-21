@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const Container = styled.div`
     background-color:#222222;
     width:100vw;
-    height:200vh;
+    height:auto;
     margin-top:6.75rem;
 `
 
 export const Docs = styled.div`
     color:white;
-    margin-left:5%;
+    margin-left:20%;
     margin-top:3%;
     font-weight:200;
     font-size:20px;
@@ -22,6 +22,7 @@ export const SideBar = styled.div`
     height:100%;
     float:left;
     margin-left:1%;
+    position:fixed;
     max-height: 80vh;
     overflow-y: auto;
 `
