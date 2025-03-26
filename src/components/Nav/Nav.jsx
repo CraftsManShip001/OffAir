@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import Logo from "../../assets/offairLogo.png";
 import styled from "styled-components";
-import { useNavigate } from 'react-router-dom';
 import { useMenu } from "../../hooks/Menu/useMenu";
 
 export default function Nav() {
@@ -53,4 +51,5 @@ const Menu = styled.a`
     &:hover {
         color: #ffffff;
     }
+    user-select: none;
 `;

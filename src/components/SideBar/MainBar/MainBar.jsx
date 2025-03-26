@@ -4,11 +4,17 @@ import Closed from '../../../assets/closed.png';
 import Opened from '../../../assets/opened.png';
 
 import SubBar from "../SubBar/SubBar";
+import { useEffect } from "react";
 
 export default function MainBar({title,subMenus,selectedSub,setSelectedSub}){
 
     const [bar,changeBar] = useBar();
-
+    useEffect(()=>{
+        if(title === '시작 가이드'){
+            changeBar();
+        }
+    },[title])
+    
     return(
         <>
         <Bar onClick={()=>{changeBar()}}>
@@ -40,8 +46,10 @@ const Bar = styled.div`
     border-radius:7px;
     margin-top:10%;
     font-size:0.85rem;
+    user-select: none;
 `
 
 const Subs = styled.div`
     width : 100%;
+    user-select: none;
 `
