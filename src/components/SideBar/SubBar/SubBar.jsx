@@ -15,18 +15,20 @@ export default function SubBar({subtitle,isSelected,onclick}){
 const Sub = styled.div`
     width : 100%;
     height : 1.75rem;
-    background-color : ${(props) => (props.isSelected ? "#232031" : null)};;
+    background-color : ${(props) => (props.isSelected ? "#2B1381" : null)};;
     color : white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left:8%;
+    padding-top:0.5%;
+    padding-bottom:0.5%;
     border-radius:7px;
     margin-top:3%;
     font-size:0.85rem;
     margin-left:10%;
 
     &:hover {
-        background-color: #232032;
+        background-color: #2B1381;
     }
 `
