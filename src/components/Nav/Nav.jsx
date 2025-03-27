@@ -1,4 +1,3 @@
-import Logo from "../../assets/offairLogo.png";
 import styled from "styled-components";
 import { useMenu } from "../../hooks/Menu/useMenu";
 
@@ -8,7 +7,7 @@ export default function Nav() {
     return (
         <NavMenu>
             <LogoContainer>
-                <img onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={Logo} width={150}></img>
+                <img onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={150}></img>
             </LogoContainer>
             <MenuContainer>
                 <Menu onClick={()=>changeMenu('main')} isClicked={menu === 'main'}>main</Menu>

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { useBar } from "../../../hooks/Bar/useBar";
-import Closed from '../../../assets/closed.png';
-import Opened from '../../../assets/opened.png';
 
 import SubBar from "../SubBar/SubBar";
 import { useEffect } from "react";
@@ -19,7 +17,7 @@ export default function MainBar({title,subMenus,selectedSub,setSelectedSub}){
         <>
         <Bar onClick={()=>{changeBar()}}>
             <span>{title}</span>
-            <img src = {bar ? Opened : Closed}></img>
+            <img src = {bar ? "../../../assets/opened.png" : "../../../assets/closed.png"}></img>
         </Bar>
         {bar ? (<Subs>
             {
