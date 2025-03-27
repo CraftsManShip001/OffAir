@@ -7,7 +7,10 @@ export default function SubBar({subtitle,isSelected,onclick}){
     const [bar,changeBar] = useBar();
     return(
         <>
-        <Sub bar = {bar} onClick={()=>{changeBar(); onclick()}} isSelected={isSelected}>{subtitle}</Sub>
+        <Sub bar = {bar} onClick={()=>{changeBar(); window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        }); onclick()}} isSelected={isSelected}>{subtitle}</Sub>
         </>
     )
 }
