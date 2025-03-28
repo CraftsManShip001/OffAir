@@ -30,9 +30,10 @@ const Sub = styled.div`
     margin-top:3%;
     font-size:0.85rem;
     margin-left:10%;
+    cursor: pointer;
 
     &:hover {
-        background-color: #161517;
+        background-color: ${(props) => (props.isSelected ? "#3C3559" : "#161517")};
         color:white;
     }
 `

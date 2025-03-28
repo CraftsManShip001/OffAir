@@ -44,6 +44,7 @@ const Bar = styled.div`
     border-radius:7px;
     margin-top:10%;
     font-size:0.85rem;
+    cursor : pointer;
     user-select: none;
 `
 

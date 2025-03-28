@@ -7,7 +7,7 @@ export default function Nav() {
     return (
         <NavMenu>
             <LogoContainer>
-                <img onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={150}></img>
+                <img style = {{cursor: 'pointer'}} onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={150}></img>
             </LogoContainer>
             <MenuContainer>
                 <Menu onClick={()=>changeMenu('main')} isClicked={menu === 'main'}>main</Menu>
@@ -51,4 +51,5 @@ const Menu = styled.a`
         color: #ffffff;
     }
     user-select: none;
+    cursor : pointer;
 `;
