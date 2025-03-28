@@ -8,14 +8,7 @@ import DocsPage from './pages/docs/DocsPage/DocsPage.jsx';
 
 
 
-function App() {
-
-  const userwidth = window.innerWidth;
-
-  if(userwidth <= 600){
-    return <Donot></Donot>
-  }
-  
+function App() {  
   return (
     <Routes>
       <Route path = '/' element = {<Main></Main>}></Route>
