@@ -18,8 +18,8 @@ export default function SubBar({subtitle,isSelected,onclick}){
 const Sub = styled.div`
     width : 100%;
     height : 1.75rem;
-    background-color : ${(props) => (props.isSelected ? "#2B1381" : null)};;
-    color : white;
+    background-color : ${(props) => (props.isSelected ? "#3C3559" : null)};
+    color : ${(props) => (props.isSelected ? "white" : "#999999")};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,6 +32,7 @@ const Sub = styled.div`
     margin-left:10%;
 
     &:hover {
-        background-color: #2B1381;
+        background-color: #161517;
+        color:white;
     }
 `
