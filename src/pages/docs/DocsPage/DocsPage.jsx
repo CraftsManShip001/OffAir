@@ -70,6 +70,7 @@ export default function DocsPage(){
         {subName:'AUDIO MIXER'},
         {subName:'LIVE 입력 영상 송출'},
         {subName:'NET & USB'},
+        {subName:'기능 설명'},
         {subName:'PC 화면 송출'},
         {subName:'Play List 순서 송출'},
         {subName:'VIDEO MIXER'}
