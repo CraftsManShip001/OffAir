@@ -72,7 +72,6 @@ export default function DocsPage(){
         {subName:'Play List 순서 송출'},
         {subName:'예약 송출'},
         {subName:'동영상 녹화'},
-        {subName:'외부장비 제어'},
         {subName:'원격'}
     ]
       
