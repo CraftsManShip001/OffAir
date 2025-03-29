@@ -1,22 +1,29 @@
-import { useState } from "react";
 import { useBar } from "../../../hooks/Bar/useBar";
 import styled from "styled-components";
+import useOpenStore from "../../../stores/useOpenStore";
+import useWidthStore from "../../../stores/useWidthStore";
 
 export default function SubBar({subtitle,isSelected,onclick}){
 
     const [bar,changeBar] = useBar();
+    const {widthsize} = useWidthStore();
+    const {changeOpen} = useOpenStore();
+
     return(
         <>
         <Sub bar = {bar} onClick={()=>{changeBar(); window.scrollTo({
             top: 0,
             behavior: 'smooth'
-        }); onclick()}} isSelected={isSelected}>{subtitle}</Sub>
+        }); onclick(); 
+        if(widthsize <= 800) {
+            changeOpen()};
+        }} isSelected={isSelected}>{subtitle}</Sub>
         </>
     )
 }
 
 const Sub = styled.div`
-    width : 100%;
+    width : 83%;
     height : 1.75rem;
     background-color : ${(props) => (props.isSelected ? "#3C3559" : null)};
     color : ${(props) => (props.isSelected ? "white" : "#999999")};
@@ -35,5 +42,9 @@ const Sub = styled.div`
     &:hover {
         background-color: ${(props) => (props.isSelected ? "#3C3559" : "#161517")};
         color:white;
+    }
+    @media(max-width : 800px){
+        width:80%;
+        margin-top:2%;
     }
 `

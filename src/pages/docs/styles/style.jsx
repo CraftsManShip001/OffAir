@@ -5,6 +5,9 @@ export const Container = styled.div`
     width:100vw;
     height:auto;
     margin-top:6.75rem;
+    @media(max-width : 800px){
+        margin-top:6rem;
+    }
 `
 
 export const Docs = styled.div`
@@ -12,9 +15,16 @@ export const Docs = styled.div`
     margin-left:20%;
     margin-top:3%;
     font-weight:200;
-    font-size:20px;
+    font-size:1.2rem;
     float:left;
     width:75%;
+
+    @media(max-width : 800px){
+        margin-left : 5%;
+        font-size: 0.9rem;
+        width:90%;
+    }
+
 `
 
 export const SideBar = styled.div`
@@ -25,4 +35,18 @@ export const SideBar = styled.div`
     position:fixed;
     max-height: 80vh;
     overflow-y: auto;
+    overflow-y: auto;
+    @media(max-width : 800px){
+        width:95%;
+        height:${(props) => (props.open ? "100%" : "0%")};;
+        opacity: ${(props) => (props.open ? "1" : "0")};
+        transition: height 1s ease-in-out, opacity 1s ease-in-out;
+    }
+`
+
+export const Button = styled.div`
+    width:20%;
+    margin-left:5%;
+    color : white;
+    margin-bottom:5%;
 `

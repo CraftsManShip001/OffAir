@@ -4,17 +4,21 @@ import { MDXProvider } from "@mdx-js/react";
 import MainBar from '../../../components/SideBar/MainBar/MainBar.jsx';
 import { useState,useEffect } from 'react';
 import * as S from '../styles/style.jsx';
+import useWidthStore from '../../../stores/useWidthStore.js';
+import {StartMenu,GearMenu,SoftwareMenu} from './Docs.js';
+import useOpenStore from '../../../stores/useOpenStore.js';
 
 export default function DocsPage(){
 
     const [CurrentDocs, setCurrentDocs] = useState('소개');
-
     const [selectedSub, setSelectedSub] = useState('소개'); // 선택된 메뉴 추적함
+
+    const {widthsize} = useWidthStore();
+    const {open,changeOpen} = useOpenStore();
 
     const loadGuide = (folder,docsName) => {
         import(`../../../components/docsMDX/${folder}/${docsName}.mdx`)
         .then((module) => {
-            console.log(module);
             setCurrentDocs(() => module.default);
         });
     };
@@ -38,48 +42,13 @@ export default function DocsPage(){
         else if(GearsubExists){
             loadGuide('Gear', selectedSub);
         }
-        else{
-            console.log(selectedSub);
-        }
     },[selectedSub])
 
-
-    const StartMenu = [
-        {subName:'소개'},
-        {subName:'규칙'}
-    ]
-
-    const SoftwareMenu = [
-        {subName:'명칭 및 기능'},
-        {subName:'시스템 상태표시'}
-    ]
-
-    const GearMenu = [
-        {subName:'기능 설명'},
-        {subName:'입출력 신호 연결'},
-        {subName:'프로그램 실행'},
-        {subName:'입력 출력 설정'},
-        {subName:'입출력 바이패스 설정'},
-        {subName:'VIDEO MIXER'},
-        {subName:'LIVE 입력 영상 송출'},
-        {subName:'NET & USB'},
-        {subName:'동영상 재생 송출'},
-        {subName:'이미지,PPT 송출'},
-        {subName:'PC 화면 송출'},
-        {subName:'단문 메시지 송출'},
-        {subName:'AUDIO MIXER'},
-        {subName:'배경 오디오 설정'},
-        {subName:'Play List 순서 송출'},
-        {subName:'예약 송출'},
-        {subName:'동영상 녹화'},
-        {subName:'원격'}
-    ]
-      
-    
     return(
         <>
             <S.Container>
                 <NavMenu></NavMenu>
+                { widthsize > 800 ? 
                 <S.SideBar>
                     <MainBar title={'시작 가이드'} subMenus={StartMenu} 
                     selectedSub = {selectedSub} 
@@ -90,10 +59,26 @@ export default function DocsPage(){
                     <MainBar title={'통합 방송장비'} subMenus={GearMenu} 
                     selectedSub = {selectedSub} 
                     setSelectedSub = {setSelectedSub}></MainBar>
-                </S.SideBar>
+                </S.SideBar> : (
+                    <>
+                    <S.Button onClick={changeOpen}>펼쳐보기</S.Button>
+                    <S.SideBar open = {open}>
+                                <MainBar title={'시작 가이드'} subMenus={StartMenu} 
+                                selectedSub = {selectedSub} 
+                                setSelectedSub = {setSelectedSub}></MainBar>
+                                <MainBar title={'방송 소프트웨어'} subMenus={SoftwareMenu} 
+                                selectedSub = {selectedSub} 
+                                setSelectedSub = {setSelectedSub}></MainBar>
+                                <MainBar title={'통합 방송장비'} subMenus={GearMenu} 
+                                selectedSub = {selectedSub} 
+                                setSelectedSub = {setSelectedSub}></MainBar>
+                            </S.SideBar> 
+                    
+                    </>
+                )}
                 <MDXProvider components={{}}>
                     <S.Docs>
-                        {CurrentDocs ? <CurrentDocs/> : <p>로딩 중...</p>}
+                        {CurrentDocs ? (widthsize>800 ? <CurrentDocs/> : open ? null : <CurrentDocs/>): <p>로딩 중...</p>}
                     </S.Docs>
                 </MDXProvider>
             </S.Container>

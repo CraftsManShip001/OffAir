@@ -3,10 +3,12 @@ import { useBar } from "../../../hooks/Bar/useBar";
 
 import SubBar from "../SubBar/SubBar";
 import { useEffect } from "react";
+import useOpen from "../../../hooks/Open/useOpen";
 
 export default function MainBar({title,subMenus,selectedSub,setSelectedSub}){
 
     const [bar,changeBar] = useBar();
+
     useEffect(()=>{
         if(title === '시작 가이드'){
             changeBar();
@@ -46,6 +48,12 @@ const Bar = styled.div`
     font-size:0.85rem;
     cursor : pointer;
     user-select: none;
+
+    @media(max-width : 800px){
+        padding-left:2%;
+        height : 2.4rem;
+        margin-top:2%;
+    }
 `
 
 const Subs = styled.div`

@@ -25,6 +25,9 @@ const Container = styled.div`
     width:100vw;
     height:auto;
     margin-top:10rem;
+    @media(max-width:800px){
+        margin-top:8rem;
+    }
 `
 
 const Docs = styled.div`
@@ -32,5 +35,11 @@ const Docs = styled.div`
     margin-left:7%;
     margin-top:3%;
     font-weight:200;
-    font-size:20px;
+    font-size:1.2rem;
+    width:78%;
+
+     @media(max-width:800px){
+        font-size : 0.9rem;
+    }
+
 `
