@@ -61,7 +61,6 @@ export default function DocsPage(){
                     setSelectedSub = {setSelectedSub}></MainBar>
                 </S.SideBar> : (
                     <>
-                    <S.Button onClick={changeOpen}>펼쳐보기</S.Button>
                     <S.SideBar open = {open}>
                                 <MainBar title={'시작 가이드'} subMenus={StartMenu} 
                                 selectedSub = {selectedSub} 

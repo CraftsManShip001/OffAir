@@ -41,12 +41,17 @@ export const SideBar = styled.div`
         height:${(props) => (props.open ? "100%" : "0%")};;
         opacity: ${(props) => (props.open ? "1" : "0")};
         transition: height 1s ease-in-out, opacity 1s ease-in-out;
+        margin-left:3%;
     }
 `
 
 export const Button = styled.div`
     width:20%;
+    height:2rem;
+    text-align:center;
     margin-left:5%;
     color : white;
     margin-bottom:5%;
+    border-radius : 3px;
+    background-color : #3C3559;
 `

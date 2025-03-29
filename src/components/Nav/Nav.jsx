@@ -1,20 +1,23 @@
 import styled from "styled-components";
 import { useMenu } from "../../hooks/Menu/useMenu";
 import useWidthStore from "../../stores/useWidthStore";
+import useOpenStore from "../../stores/useOpenStore";
 
 export default function Nav() {
     const [menu,changeMenu] = useMenu('main');
     const {widthsize} = useWidthStore();
+    const {open,changeOpen} = useOpenStore();
     return (
         <NavMenu>
             <LogoContainer>
-                {widthsize >= 800 ? <img style = {{cursor: 'pointer'}} onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={150}></img> : <img style = {{cursor: 'pointer'}} onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={80}></img>}
+                {widthsize > 800 ? <img style = {{cursor: 'pointer'}} onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={150}></img> : <img style = {{cursor: 'pointer'}} onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={80}></img>}
             </LogoContainer>
             <MenuContainer>
                 <Menu onClick={()=>changeMenu('main')} isClicked={menu === 'main'}>main</Menu>
                 <Menu onClick={()=>{changeMenu('docs')}} isClicked={menu === 'docs'}>docs</Menu>
                 <Menu onClick={()=>{changeMenu('plus')}} isClicked={menu === 'plus'}>plus</Menu>
             </MenuContainer>
+            {widthsize <= 800 ? <img style = {{marginRight:"8%", transition:"all 1s ease-in-out"}} src = {open ? '/assets/X.svg' : '/assets/menu.svg'} onClick={changeOpen}></img> : null}
         </NavMenu>
     );
 }
@@ -45,7 +48,7 @@ const MenuContainer = styled.div`
     align-items: center;
     margin-right:5rem;
     @media(max-width : 800px){
-        margin-right:3rem;
+        margin-right:1rem;
     }
 `;
 
@@ -62,7 +65,7 @@ const Menu = styled.a`
 
     @media (max-width: 800px){
         font-size : 1rem;
-        margin-left:
+        margin-left:1.75rem;
     }
     
 `;
