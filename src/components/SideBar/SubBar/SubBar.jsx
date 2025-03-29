@@ -44,7 +44,9 @@ const Sub = styled.div`
         color:white;
     }
     @media(max-width : 800px){
-        width:80%;
+        width:90%;
         margin-top:2%;
+        padding-left:2%;
+        margin-left:5%;
     }
 `
