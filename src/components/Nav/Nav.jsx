@@ -58,7 +58,7 @@ const MenuContainer = styled.div`
     }
 `;
 
-const Menu = styled.a`
+const Menu = styled.div`
     font-size: 1.2rem;
     color: ${(props) => (props.isClicked ? "white" : "#999999")};;
     font-family: "Pretendard-Regular";
