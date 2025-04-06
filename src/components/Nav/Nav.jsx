@@ -19,9 +19,9 @@ export default function Nav() {
                 />
             </LogoContainer>
             <MenuContainer isDocs={menu === 'docs'}>
-                <Menu onClick={()=>changeMenu('main')} isClicked={menu === 'main'}>main</Menu>
-                <Menu onClick={()=>{changeMenu('docs')}} isClicked={menu === 'docs'}>docs</Menu>
-                <Menu onClick={()=>{changeMenu('plus')}} isClicked={menu === 'plus'}>plus</Menu>
+                <Menu onClick={()=>changeMenu('main')} $isClicked={menu === 'main'}>main</Menu>
+                <Menu onClick={()=>{changeMenu('docs')}} $isClicked={menu === 'docs'}>docs</Menu>
+                <Menu onClick={()=>{changeMenu('plus')}} $isClicked={menu === 'plus'}>plus</Menu>
             </MenuContainer>
             {widthsize <= 800 && menu === 'docs' ? <img style = {{marginRight:"8%", transition:"all 1s ease-in-out"}} src = {open ? '/assets/X.svg' : '/assets/menu.svg'} onClick={changeOpen}></img> : null}
         </NavMenu>
@@ -60,7 +60,7 @@ const MenuContainer = styled.div`
 
 const Menu = styled.div`
     font-size: 1.2rem;
-    color: ${(props) => (props.isClicked ? "white" : "#999999")};;
+    color: ${({ $isClicked }) => ($isClicked ? "white" : "#999")};
     font-family: "Pretendard-Regular";
     margin-left: 2.5rem;
     &:hover {
