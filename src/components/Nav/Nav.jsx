@@ -7,6 +7,7 @@ export default function Nav() {
     const [menu,changeMenu] = useMenu('main');
     const {widthsize} = useWidthStore();
     const {open,changeOpen} = useOpenStore();
+    const menus = ['main', 'docs', 'plus'];
     return (
         <NavMenu>
             <LogoContainer>
@@ -19,9 +20,13 @@ export default function Nav() {
                 />
             </LogoContainer>
             <MenuContainer isDocs={menu === 'docs'}>
-                <Menu onClick={()=>changeMenu('main')} $isClicked={menu === 'main'}>main</Menu>
-                <Menu onClick={()=>{changeMenu('docs')}} $isClicked={menu === 'docs'}>docs</Menu>
-                <Menu onClick={()=>{changeMenu('plus')}} $isClicked={menu === 'plus'}>plus</Menu>
+                {menus.map((m) => (
+                    <Menu 
+                        key={m} 
+                        onClick={() => changeMenu(m)} 
+                        $isClicked={menu === m} 
+                    >{m}</Menu>
+                ))}
             </MenuContainer>
             {widthsize <= 800 && menu === 'docs' ? <img style = {{marginRight:"8%", transition:"all 1s ease-in-out"}} src = {open ? '/assets/X.svg' : '/assets/menu.svg'} onClick={changeOpen}></img> : null}
         </NavMenu>
