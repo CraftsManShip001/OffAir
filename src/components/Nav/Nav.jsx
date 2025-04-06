@@ -10,7 +10,13 @@ export default function Nav() {
     return (
         <NavMenu>
             <LogoContainer>
-                {widthsize > 800 ? <img style = {{cursor: 'pointer'}} onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={150}></img> : <img style = {{cursor: 'pointer'}} onClick={()=>changeMenu('main')} isClicked={menu === 'main'} src={"../../assets/offairLogo.png"} width={80}></img>}
+                <img 
+                    style={{ cursor: 'pointer' }} 
+                    onClick={() => changeMenu('main')} 
+                    isClicked={menu === 'main'} 
+                    src="../../assets/offairLogo.png" 
+                    width={widthsize > 800 ? 150 : 80}
+                />
             </LogoContainer>
             <MenuContainer isDocs={menu === 'docs'}>
                 <Menu onClick={()=>changeMenu('main')} isClicked={menu === 'main'}>main</Menu>
